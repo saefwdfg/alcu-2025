@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALCU 2025 | The Ultimate University Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#a855f7',
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                        gradient1: '#4f46e5',
+                        gradient2: '#9333ea',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Bebas Neue', 'cursive']
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 8s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {'background-position':'0% 50%'},
+                            '50%': {'background-position':'100% 50%'},
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'blob': {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .neon-shadow {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+
+        @media (max-width: 640px) {
+            .mobile-column {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-light antialiased">
+    <div class="fixed inset-0 z-0 opacity-10" 
+         style="background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png')"></div>
+
+         <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+            <nav class="container mx-auto px-4 sm:px-6 py-3">
+                <div class="flex justify-between items-center">
+                    <a href="#" class="text-xl sm:text-2xl font-bold gradient-text">ALCU'25</a>
+                    <div class="hidden md:flex space-x-4 lg:space-x-6">
+                        <a href="#home" class="p-2 text-dark hover:text-primary transition-colors" aria-label="Home">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </a>
+                        <a href="#about" class="p-2 text-dark hover:text-primary transition-colors" aria-label="About">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </a>
+                        <a href="#events" class="p-2 text-dark hover:text-primary transition-colors" aria-label="Events">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="#gallery" class="p-2 text-dark hover:text-primary transition-colors" aria-label="Gallery">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <button class="md:hidden text-dark" id="menu-toggle">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+        
+                <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-sm px-4 pb-4">
+                    <div class="flex flex-col space-y-3 pt-4">
+                        <a href="#home" class="nav-link text-dark hover:text-primary text-base flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                        <a href="#about" class="nav-link text-dark hover:text-primary text-base flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>About</span>
+                        </a>
+                        <a href="#events" class="nav-link text-dark hover:text-primary text-base flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Events</span>
+                        </a>
+                        <a href="#gallery" class="nav-link text-dark hover:text-primary text-base flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Gallery</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 md:pt-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent z-0"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
+                <div class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                    <img src="pic.png" alt="Profile Picture" class="w-full h-full object-cover">
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-display mb-4 gradient-text">
+                        CHERRY MAE P. DELA TORRE
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-dark/80 mb-6">
+                        Bachelor of Science in Office Administration 
+                    </p>
+                    <div class="max-w-xl mx-auto md:mx-0 mb-8 text-dark/80">
+                        <p class="mb-4">
+                            Thanks for visiting! Here’s a bit about me. My name is Cherry Mae P. Dela Torre, I am currently a 3rd year student taking up Bachelor of Science in Office Administration at Tangub City Global College (TCGC). I grew up in the place where life was simple and full of adventures. From playing outside with friends to helping out at home, I learned the value of family, hard work, and gratitude at an early age. I’ve always been curious and eager to learn. As I continue my journey as a student and young adult, I carry with me the values and memories from my childhood. They reminded me of where I came from and guide me towards where I want to go.
+                        </p>
+                        <div class="flex justify-center md:justify-start gap-4">
+                            <a href="mailto:your.email@example.com" class="text-primary hover:text-secondary transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </a>
+                            <a href="tel:+63 9126386418" class="text-primary hover:text-secondary transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="contactInfo" class="hidden mt-4 p-4 bg-white rounded-lg shadow-md">
+                        <div class="space-y-2">
+                            <p class="text-dark flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                cherrymaedelatorre@gmail.com
+                            </p>
+                            <p class="text-dark flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                +63 9126386418
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="animate-float">
+                        <button id="contactButton" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-8 sm:px-12 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all cursor-pointer">
+                            Contact Me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute w-64 h-64 -top-32 -right-32 sm:w-96 sm:h-96 sm:-top-48 sm:-right-48 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute w-64 h-64 -bottom-32 left-32 sm:w-96 sm:h-96 sm:-bottom-48 sm:left-48 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+    </section>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactButton = document.getElementById('contactButton');
+        const contactInfo = document.getElementById('contactInfo');
+
+        contactButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactInfo.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!contactInfo.contains(event.target) && 
+                !contactButton.contains(event.target)) {
+                contactInfo.classList.add('hidden');
+            }
+        });
+    });
+    </script>
+
+    <section id="about" class="py-16 md:py-24 bg-dark text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+                <div class="space-y-6 md:space-y-8" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold">WHAT IS ALCU X GAMES 2025?<br></h2>
+                    <p class="text-base md:text-lg opacity-80 leading-relaxed">
+                        ALCU X GAMES 2025 is an annual multi-sports and cultural event organized by the Association of Local Colleges and Universities (ALCU) in the Philippines. It serves as a platform for student-athletes and artists from various Local Universities and Colleges (LUCs) to showcase their talents, foster camaraderie, and promote holistic development. It was hosted by Tubod College (TC) in Tubod, Lanao del Norte.
+This page is to preserve the action, passion, and excitement of every game. I believe that every athlete deserves to relive those incredible moments through powerful imagery.
+
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="glass-effect p-4 sm:p-6 rounded-xl">
+                            <div class="text-2xl sm:text-3xl font-bold text-primary mb-2">25+</div>
+                            <div class="text-sm sm:text-base opacity-80">Competitions</div>
+                        </div>
+                        <div class="glass-effect p-4 sm:p-6 rounded-xl">
+                            <div class="text-2xl sm:text-3xl font-bold text-secondary mb-2">50+</div>
+                            <div class="text-sm sm:text-base opacity-80">Universities</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative mt-8 md:mt-0" data-aos="fade-left">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-30 blur-3xl"></div>
+                    <img src="unnamed.jpg"
+                         alt="About" 
+                         class="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-2xl hover-scale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="py-16 md:py-24 bg-white relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Events</h2>
+                <p class="text-dark/80 max-w-xl mx-auto text-sm sm:text-base">Discover the thrilling competitions that define the ALCU spirit</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl hover-scale" data-aos="zoom-in">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Academic Showdown</h3>
+                    <ul class="space-y-2 text-dark/80 text-sm sm:text-base">
+                        <li>• ALCU Grand Debate Championship</li>
+                        <li>• Future Innovators Challenge</li>
+                        <li>• Golden Case Masters</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl hover-scale" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Athletic Championships</h3>
+                    <ul class="space-y-2 text-dark/80 text-sm sm:text-base">
+                        <li>• ALCU Elite Basketball Cup</li>
+                        <li>• Spike Royale Volleyball Championship</li>
+                        <li>• eSports Tournament</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl hover-scale" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Cultural Fest</h3>
+                    <ul class="space-y-2 text-dark/80 text-sm sm:text-base">
+                        <li>• National Costume Showcase</li>
+                        <li>• Talent Fusion Olympics</li>
+                        <li>• Food & Arts Festival</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-16 md:py-24 bg-dark relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-aos="fade-up">Moments of Glory</h2>
+                <p class="text-white/80 max-w-xl mx-auto text-sm sm:text-base" data-aos="fade-up" data-aos-delay="150">Captured moments from each day of the competition</p>
+            </div>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div class="relative group overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover-scale" data-aos="zoom-in">
+                    <img src="pic2.png" 
+                         alt="Opening Ceremony" 
+                         class="w-full h-48 sm:h-56 md:h-64 object-cover transform group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-white mb-1">Day 1</h3>
+                        <p class="text-white/80 text-sm sm:text-base">Delegates, officiating officials from across Region 10, marks the vibrant opening of ALCU x Games 2025 through proudly parading from Tubod College to Mindanao Civic Center.</p>
+                    </div>
+                </div>
+    
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl hover-scale" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="pic3.png" 
+                         alt="Academic Competition" 
+                         class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <p class="text-white/80">Despite the rainy and cold weather, TCGC proudly performed their well-prepared Saludo, showcasing their pride and unity.</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl hover-scale" data-aos="zoom-in">
+                    <img src="pic4.png" 
+                         alt="Cultural Night" 
+                         class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Day 2</h3>
+                        <p class="text-white/80">The second day of the ALCU X Games 2025 starts off with athletics games held at TCGC.</p>
+                    </div>
+                </div>
+    
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl hover-scale" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="pic4.png" 
+                         alt="Long-distance Challenge" 
+                         class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <p class="text-white/80">Competitors from different institutions are showcasing endurance, speed, and determination as they aim for gold in this long-distance challenge.</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl hover-scale" data-aos="zoom-in">
+                    <img src="pic5.png" 
+                         alt="Basketball Finals" 
+                         class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Day 3</h3>
+                        <p class="text-white/80">Throwing events were held on the third day of the ALCU X Games 2025.</p>
+                    </div>
+                </div>
+    
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl hover-scale" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="pic6.png" 
+                         alt="Awarding Ceremony" 
+                         class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <p class="text-white/80">Discus and Javelin were dominated by athletes from TCGC garnering gold on the said events.</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl hover-scale" data-aos="zoom-in">
+                    <img src="pic7.png" 
+                         alt="Relay Race" 
+                         class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Day 4</h3>
+                        <p class="text-white/80">Teamwork in motion 🏃‍♂️🏃‍♀️ Passing the baton with speed, strength, and spirit!</p>
+                    </div>
+                </div>
+    
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl hover-scale" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="pic9.png" 
+                         alt="Victory Celebration" 
+                         class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <p class="text-white/80">Hard work, dedication, and heart — it all paid off as TCGC bags gold and took the first place in athletics games.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-8 md:py-12 relative z-50">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <div class="flex justify-center space-x-8 mb-6">
+                <a href="https://www.facebook.com/share/16VomMy3KG/" 
+                   class="text-white hover:text-primary transition-colors p-2 inline-block"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24" style="pointer-events: none;">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                </a>
+
+                <a href="https://www.instagram.com/rey_cial/" 
+                   class="text-white hover:text-primary transition-colors p-2 inline-block"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24" style="pointer-events: none;">
+                        <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 4.006-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-4.006-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+                    </svg>
+                </a>
+
+                <a href="https://www.tiktok.com/@iconiczelite_404notfound" 
+                   class="text-white hover:text-primary transition-colors p-2 inline-block"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24" style="pointer-events: none;">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-white/60 text-xs sm:text-sm">&copy; 2025 Designed by: Admirer</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-out-quad'
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+            if (window.innerWidth < 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+    });
+});
+    </script>
+</body>
+</html>
